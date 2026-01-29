@@ -1,0 +1,140 @@
+{
+  "typography": {
+    "headings": {
+      "font_family": "Playfair Display, serif",
+      "weights": ["400", "600", "700"],
+      "usage": "All section titles, hero headings, and product names. Use italic variant for emphasis."
+    },
+    "body": {
+      "font_family": "Manrope, sans-serif",
+      "weights": ["300", "400", "500"],
+      "usage": "Paragraphs, navigation, buttons, and utility text."
+    },
+    "scale": {
+      "h1": "text-5xl md:text-7xl tracking-tight leading-none",
+      "h2": "text-4xl md:text-5xl tracking-tight",
+      "h3": "text-2xl md:text-3xl tracking-normal",
+      "body": "text-base md:text-lg leading-relaxed tracking-wide"
+    }
+  },
+  "colors": {
+    "theme": "light",
+    "palette": {
+      "background": "#F9F8F6",
+      "foreground": "#2D241B",
+      "primary": "#A18267",
+      "primary_foreground": "#FFFFFF",
+      "secondary": "#E5E0D8",
+      "secondary_foreground": "#2D241B",
+      "muted": "#F0EBE5",
+      "muted_foreground": "#8C847C",
+      "accent": "#C4C5BA",
+      "accent_foreground": "#2D241B",
+      "border": "#E5E0D8",
+      "input": "#FFFFFF",
+      "ring": "#A18267"
+    },
+    "usage_rules": "Use background for main pages. Use secondary for cards/sections. Primary is strictly for CTAs. Text should always be foreground or muted_foreground, never pure black."
+  },
+  "visual_enhancers": {
+    "radius": "0.25rem",
+    "shadows": {
+      "card": "0 4px 20px -2px rgba(45, 36, 27, 0.05)",
+      "hover": "0 10px 30px -4px rgba(45, 36, 27, 0.1)"
+    },
+    "spacing": {
+      "section_padding": "py-24 md:py-32",
+      "container_padding": "px-6 md:px-12",
+      "element_gap": "gap-8"
+    },
+    "borders": "1px solid var(--border)"
+  },
+  "layout": {
+    "container": "max-w-7xl mx-auto",
+    "grid_system": "grid grid-cols-1 md:grid-cols-12 gap-8",
+    "modes": {
+      "marketing": "Asymmetric 'Tetris' grid. Use col-span-7 for images and col-span-5 for text.",
+      "product_grid": "grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16"
+    }
+  },
+  "components": {
+    "buttons": "Sharp or slightly rounded (rounded-sm). Uppercase text with wide tracking. Hover: slight lift and shadow.",
+    "cards": "Flat, no border, transparent background. Image takes 80% height. Text below image, centered or left-aligned.",
+    "inputs": "Minimalist. Underline only or very light border. No heavy backgrounds.",
+    "navigation": "Sticky, glassmorphism (backdrop-blur-md bg-background/80). Centered logo, split links."
+  },
+  "image_urls": {
+    "hero": [
+      {
+        "url": "https://images.unsplash.com/photo-1553444892-20174939d7bb",
+        "description": "Cozy living room with warm lighting",
+        "category": "hero_background"
+      }
+    ],
+    "products": [
+      {
+        "url": "https://images.unsplash.com/photo-1627808587525-194446b07384",
+        "description": "Minimalist glass jar candle",
+        "category": "product_main"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1604478498491-d63d698dfe0b",
+        "description": "Dark pillar candle",
+        "category": "product_variant"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1721274500738-f6e549c7d5fc",
+        "description": "Candle with vase lifestyle",
+        "category": "product_lifestyle"
+      }
+    ],
+    "about": [
+      {
+        "url": "https://images.unsplash.com/photo-1674812709785-9497062872d0",
+        "description": "Pouring wax artisan process",
+        "category": "process"
+      },
+      {
+        "url": "https://images.pexels.com/photos/6755799/pexels-photo-6755799.jpeg",
+        "description": "Artisan maker portrait",
+        "category": "team"
+      }
+    ],
+    "branding": [
+      {
+        "url": "https://images.pexels.com/photos/3081173/pexels-photo-3081173.jpeg",
+        "description": "Abstract minimalist shape for logo mark",
+        "category": "logo_mark"
+      }
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Implement a 'Slow Commerce' feel: smooth, slow transitions (0.5s ease-out).",
+    "Use Lenis for smooth scrolling.",
+    "Do not use standard Shadcn cards for products; create a custom 'ProductDisplay' component that emphasizes the image.",
+    "Ensure the 'Add to Cart' flow is seamless, using a side drawer (Sheet) instead of a page reload.",
+    "Use the 'Playfair Display' font for all headings to establish the luxury brand voice.",
+    "Maintain the 'Warm Minimalist' palette strictly. No pure blacks or cold grays.",
+    "For the Admin Dashboard, switch to a denser grid but keep the warm palette (muted versions) to reduce eye strain."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients",
+    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy",
+    "Use glass-morphism effects with backdrop filters (12-24px blur)",
+    "You MUST NOT apply universal transition. Eg: transition: all. This results in breaking transforms. Always add transitions for specific interactive elements like button, input excluding transforms",
+    "You MUST NOT center align the app container, ie do not add .App { text-align: center; } in the css file. This disrupts the human natural reading flow of text",
+    "Always use modern button styles like pill-shaped, or sharp button with interaction animations & color relevant to the app style",
+    "NEVER: use AI assistant Emoji characters like 🤖🧠💭💡🔮🎯📚🎭🎬🎪🎉🎊🎁🎀🎂🍰🎈🎨🎰💰💵💳🏦💎🪙💸🤑📊📈📉💹🔢🏆🥇 etc for icons.",
+    "Every interaction needs micro-animations - hover states, transitions, parallax effects, and entrance animations. Static = dead.",
+    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+    "Subtle grain textures, noise overlays, custom cursors, selection states, and loading animations: separates good from extraordinary.",
+    "Main agent relies on these image URLs. Missing categories (especially sponsor logos) = main agent will use placeholder text which is FORBIDDEN",
+    "Prioritize using pre-existing components from src/components/ui when applicable",
+    "Create new components that match the style and conventions of existing components when needed",
+    "Examine existing components to understand the project's component patterns before creating new ones",
+    "Components MUST use named exports (export const ComponentName = ...)",
+    "Pages MUST use default exports (export default function PageName() {...})",
+    "Use sonner for toasts. Sonner component are located in /app/src/components/ui/sonner.tsx"
+  ]
+}
