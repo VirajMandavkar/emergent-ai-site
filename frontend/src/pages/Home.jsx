@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import { ProductCard } from '../components/ProductCard';
+import { ProductCard } from '../components/ProductCard.jsx';
 import { useCart } from '../contexts/CartContext';
 import { Button } from '../components/ui/button';
 import { ArrowRight, Star } from 'lucide-react';
 import { toast } from 'sonner';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
 
 const Home = () => {

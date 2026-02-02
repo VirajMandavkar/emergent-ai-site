@@ -422,6 +422,11 @@ async def get_users(current_user: User = Depends(get_current_admin)):
 # Include the router in the main app
 app.include_router(api_router)
 
+# Root endpoint
+@app.get("/")
+async def root():
+    return {"message": "Candle Shop API is running", "status": "healthy"}
+
 app.add_middleware(
     CORSMiddleware,
     allow_credentials=True,
